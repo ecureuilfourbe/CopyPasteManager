@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Clip Manager</string>
+    <string name="no_items">Aucun élément sauvegardé</string>
+    <string name="clear_temporary_title">Effacer les éléments temporaires</string>
+    <string name="clear_temporary_message">Voulez-vous effacer tous les éléments temporaires ?</string>
+    <string name="clear_all_title">Effacer tous les éléments</string>
+    <string name="clear_all_message">Voulez-vous effacer tous les éléments (temporaires et permanents) ?</string>
+    <string name="about_title">À propos</string>
+    <string name="about_message">Gestionnaire de Clips\n\nUne application simple pour sauvegarder, rechercher et organiser vos extraits de texte et images.</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="ok">OK</string>
+    <string name="empty_list">Aucun élément sauvegardé</string>
+    <string name="add_item">Ajouter un élément</string>
+</resources>
