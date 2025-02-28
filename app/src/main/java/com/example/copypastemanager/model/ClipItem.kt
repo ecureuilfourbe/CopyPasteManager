@@ -1,11 +1,15 @@
 package com.example.copypastemanager.model
 
 import android.graphics.Bitmap
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 import java.util.Date
 
 /**
  * Modèle de données pour les éléments sauvegardés
  */
+@Parcelize
 data class ClipItem(
     val id: Long = System.currentTimeMillis(),
     val timestamp: Date = Date(),
@@ -13,11 +17,10 @@ data class ClipItem(
     val type: ClipType,
     val text: String? = null,
     val imageUri: String? = null,
-    val category: String = "Non classé"
-) {
-    // Champ pour stocker l'image en mémoire (non sérialisé)
-    var bitmap: Bitmap? = null
-
+    val categoryId: String = "0",
+    val parentCategoryId: String? = null,
+    @Transient var bitmap: @RawValue Bitmap? = null
+) : Parcelable {
     // Génère un aperçu du contenu
     fun getPreview(): String {
         return when (type) {
@@ -27,4 +30,8 @@ data class ClipItem(
             ClipType.IMAGE -> "[Image]"
         }
     }
+
+    // Pour assurer la compatibilité avec le code existant
+    val category: String
+        get() = categoryId
 }
